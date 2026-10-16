@@ -2,1790 +2,1420 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#060817">
-
-  <title>AzDar Web Studio | Your Vision, Our Code</title>
-  <meta name="description" content="Professional website design, Shopify store design and custom digital solutions by AzDar Web Studio.">
-
-  <style>
-    :root {
-      --bg: #060817;
-      --panel: #10152b;
-      --cyan: #00e5ff;
-      --purple: #a855f7;
-      --white: #f5f7ff;
-      --muted: #a8b2ce;
-      --border: rgba(148, 163, 184, .18);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(ellipse at 15% 15%, #6727a522, transparent 38%),
-        radial-gradient(ellipse at 85% 40%, #00d9ff12, transparent 35%),
-        linear-gradient(135deg, #060817, #0a1024 60%, #090719);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, textarea, select {
-      font: inherit;
-    }
-
-    p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .container {
-      width: min(1120px, 88%);
-      margin-inline: auto;
-    }
-
-    .gradient {
-      background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, #e879f9);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .section {
-      padding: 90px 0;
-      position: relative;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 45px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(30px, 5vw, 46px);
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--cyan);
-      border: 1px solid #00e5ff45;
-      background: #00e5ff0b;
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    /* Navigation */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(6, 8, 23, .88);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 900;
-      letter-spacing: -.7px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 14px;
-      transition: color .25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--cyan);
-    }
-
-    .nav-cta {
-      padding: 9px 15px;
-      border: 1px solid #00e5ff70;
-      border-radius: 9px;
-      color: var(--cyan) !important;
-    }
-
-    /* Buttons */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 21px;
-      border-radius: 10px;
-      border: 1px solid #00e5ff70;
-      font-size: 14px;
-      font-weight: 800;
-      transition: transform .25s, box-shadow .25s;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      color: #06101d;
-      background: linear-gradient(100deg, var(--cyan), #76f3ff);
-      border-color: transparent;
-      box-shadow: 0 0 25px #00e5ff20;
-    }
-
-    .btn-outline {
-      background: #ffffff06;
-      color: var(--white);
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px #00e5ff25;
-    }
-
-    /* Hero section */
-
-    .hero {
-      position: relative;
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      padding: 75px 0 95px;
-      isolation: isolate;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      filter: blur(95px);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      background: #7628e82b;
-      top: 0;
-      right: 8%;
-    }
-
-    .hero::after {
-      background: #00e5ff17;
-      bottom: 0;
-      left: 5%;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 35px;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 5.7vw, 70px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
-    }
-
-    .hero-copy > p {
-      font-size: 16px;
-      max-width: 540px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-      margin: 28px 0;
-    }
-
-    .hero-note {
-      font-size: 13px;
-      color: #8492b0;
-    }
-
-    /* 3D laptop and mobile scene */
-
-    .device-scene {
-      position: relative;
-      min-height: 410px;
-      display: grid;
-      place-items: center;
-      perspective: 1000px;
-      isolation: isolate;
-    }
-
-    .scene-glow {
-      position: absolute;
-      width: 75%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: radial-gradient(circle, #7c3aed38, #00e5ff0c 48%, transparent 70%);
-      filter: blur(12px);
-      animation: glowPulse 5s ease-in-out infinite alternate;
-    }
-
-    .orbit {
-      position: absolute;
-      width: 88%;
-      height: 55%;
-      border: 1px solid #00e5ff28;
-      border-radius: 50%;
-      transform: rotate(-25deg);
-      animation: orbitSpin 18s linear infinite;
-    }
-
-    .orbit-two {
-      width: 100%;
-      height: 67%;
-      border-color: #a855f725;
-      transform: rotate(35deg);
-      animation-direction: reverse;
-      animation-duration: 24s;
-    }
-
-    .laptop-wrap {
-      width: 100%;
-      max-width: 460px;
-      position: relative;
-      z-index: 2;
-      transform-style: preserve-3d;
-      transform: rotateY(-13deg) rotateX(5deg);
-      animation: laptopFloat 6s ease-in-out infinite;
-      transition: transform .15s ease-out;
-    }
-
-    .laptop-screen {
-      background: linear-gradient(145deg, #27344e, #090e1c 55%);
-      border: 3px solid #5b6680;
-      border-bottom: 5px solid #29364f;
-      border-radius: 15px 15px 7px 7px;
-      padding: 9px;
-      box-shadow: 0 0 0 1px #00e5ff22, 0 25px 70px #0009, 0 0 45px #7c3aed20;
-      transform: translateZ(12px);
-    }
-
-    .screen-content {
-      overflow: hidden;
-      min-height: 230px;
-      border-radius: 7px;
-      padding: 15px;
-      background:
-        radial-gradient(circle at 80% 20%, #7929a833, transparent 38%),
-        linear-gradient(135deg, #0d1930, #080b18);
-    }
-
-    .mock-browser {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding-bottom: 13px;
-      border-bottom: 1px solid #ffffff13;
-      margin-bottom: 17px;
-    }
-
-    .browser-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #fa7185;
-    }
-
-    .browser-dot:nth-child(2) { background: #facc15; }
-    .browser-dot:nth-child(3) { background: #34d399; }
-
-    .mock-address {
-      margin-left: 9px;
-      height: 14px;
-      flex: 1;
-      border-radius: 5px;
-      background: #ffffff0b;
-    }
-
-    .mock-brand {
-      font-size: 11px;
-      color: var(--cyan);
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .mock-title {
-      font-size: clamp(19px, 2.4vw, 27px);
-      line-height: 1.15;
-      font-weight: 900;
-      margin-bottom: 9px;
-    }
-
-    .mock-line {
-      height: 5px;
-      width: 80%;
-      background: #a8b2ce26;
-      border-radius: 10px;
-      margin: 7px 0;
-    }
-
-    .mock-line.short { width: 56%; }
-
-    .mock-button {
-      width: 85px;
-      height: 20px;
-      margin-top: 15px;
-      border-radius: 5px;
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-    }
-
-    .mock-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 7px;
-      margin-top: 18px;
-    }
-
-    .mock-card {
-      height: 44px;
-      border: 1px solid #ffffff13;
-      border-radius: 6px;
-      background: linear-gradient(145deg, #172c46, #101328);
-    }
-
-    .laptop-base {
-      height: 13px;
-      margin: 0 -5%;
-      border-radius: 2px 2px 16px 16px;
-      background: linear-gradient(#9aa7bd, #4a566e 35%, #1a2235);
-      transform: rotateX(48deg);
-      box-shadow: 0 16px 25px #0008;
-    }
-
-    .phone {
-      position: absolute;
-      z-index: 3;
-      width: 105px;
-      height: 195px;
-      right: -1%;
-      bottom: 3%;
-      padding: 7px;
-      border: 2px solid #75829c;
-      border-radius: 19px;
-      background: linear-gradient(145deg, #26344c, #070b17);
-      box-shadow: 0 20px 50px #0009, 0 0 28px #a855f72b;
-      transform: rotateY(-14deg) rotateZ(8deg);
-      animation: phoneFloat 5s ease-in-out infinite;
-      transition: transform .15s ease-out;
-    }
-
-    .phone-screen {
-      height: 100%;
-      overflow: hidden;
-      border-radius: 12px;
-      background: linear-gradient(160deg, #131f38, #090d1b);
-      padding: 17px 8px 8px;
-      position: relative;
-    }
-
-    .phone-screen::before {
-      content: "";
-      position: absolute;
-      width: 33px;
-      height: 5px;
-      background: #53617a;
-      border-radius: 10px;
-      top: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .phone-label {
-      color: var(--cyan);
-      font-size: 8px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .phone-heading {
-      font-size: 14px;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .phone-block {
-      height: 37px;
-      border-radius: 6px;
-      margin-top: 10px;
-      background: linear-gradient(130deg, #1d5c7b, #6d36a2);
-    }
-
-    .phone-line {
-      height: 4px;
-      background: #ffffff20;
-      border-radius: 8px;
-      margin-top: 6px;
-    }
-
-    .floating-chip {
-      position: absolute;
-      z-index: 4;
-      padding: 10px 13px;
-      border: 1px solid #ffffff20;
-      border-radius: 12px;
-      background: #11182bdd;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px #0004;
-      color: var(--white);
-      font-size: 11px;
-      font-weight: bold;
-      animation: chipFloat 4s ease-in-out infinite;
-    }
-
-    .chip-one {
-      top: 9%;
-      left: 1%;
-      color: var(--cyan);
-    }
-
-    .chip-two {
-      bottom: 7%;
-      left: 0;
-      animation-delay: -2s;
-      color: #d8b4fe;
-    }
-
-    .scene-spark {
-      position: absolute;
-      color: var(--cyan);
-      font-size: 19px;
-      animation: sparkle 3s ease-in-out infinite;
-    }
-
-    .spark-one { top: 12%; right: 13%; }
-    .spark-two { bottom: 20%; left: 15%; animation-delay: -1s; }
-
-    @keyframes laptopFloat {
-      0%, 100% {
-        transform: translateY(0) rotateY(-13deg) rotateX(5deg);
-      }
-      50% {
-        transform: translateY(-13px) rotateY(-8deg) rotateX(2deg);
-      }
-    }
-
-    @keyframes phoneFloat {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -13px; }
-    }
-
-    @keyframes chipFloat {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -9px; }
-    }
-
-    @keyframes orbitSpin {
-      from { rotate: 0deg; }
-      to { rotate: 360deg; }
-    }
-
-    @keyframes glowPulse {
-      from { opacity: .55; scale: .92; }
-      to { opacity: 1; scale: 1.08; }
-    }
-
-    @keyframes sparkle {
-      0%, 100% {
-        opacity: .25;
-        transform: scale(.7);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-    }
-  </style>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080816">
+<meta name="description" content="AzDar Web Studio creates professional websites, Shopify stores and digital solutions for modern businesses.">
+<title>AzDar Web Studio | Your Vision, Our Code</title>
 
 <style>
-  /* Services cards */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .service-card {
-    position: relative;
-    overflow: hidden;
-    min-height: 225px;
-    padding: 28px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: linear-gradient(145deg, #151d36, #0c1023);
-    transform-style: preserve-3d;
-    transition: border-color .3s, box-shadow .3s, transform .3s;
-  }
-
-  .service-card::before {
-    content: "";
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    top: -100px;
-    right: -90px;
-    border-radius: 50%;
-    background: var(--cyan);
-    opacity: .12;
-    filter: blur(35px);
-    transition: opacity .3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-9px) rotateX(2deg);
-    border-color: #00e5ff80;
-    box-shadow: 0 15px 45px #0005, 0 0 25px #00e5ff0d;
-  }
-
-  .service-card:hover::before {
-    opacity: .4;
-  }
-
-  .service-icon {
-    width: 55px;
-    height: 55px;
-    display: grid;
-    place-items: center;
-    font-size: 27px;
-    border: 1px solid #00e5ff35;
-    border-radius: 14px;
-    background: linear-gradient(145deg, #00e5ff15, #a855f715);
-    margin-bottom: 20px;
-    transform: translateZ(25px);
-  }
-
-  .service-card h3 {
-    font-size: 19px;
-    margin-bottom: 10px;
-    transform: translateZ(18px);
-  }
-
-  .service-card p {
-    font-size: 14px;
-    margin: 0;
-    transform: translateZ(10px);
-  }
-
-  .service-number {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    font-size: 12px;
-    color: #7b8aa9;
-  }
-
-  /* About section */
-  .about-panel {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    align-items: center;
-    padding: 38px;
-    border: 1px solid #a855f738;
-    border-radius: 22px;
-    background:
-      radial-gradient(circle at 100% 0%, #a855f71c, transparent 38%),
-      linear-gradient(145deg, #121a31, #0b1022);
-    box-shadow: 0 25px 70px #0002;
-  }
-
-  .about-panel h3 {
-    font-size: clamp(23px, 3vw, 34px);
-    line-height: 1.25;
-    margin-bottom: 18px;
-  }
-
-  .about-visual {
-    min-height: 260px;
-    display: grid;
-    place-items: center;
-    position: relative;
-    perspective: 700px;
-  }
-
-  .cube {
-    position: relative;
-    width: 145px;
-    height: 145px;
-    transform-style: preserve-3d;
-    transform: rotateX(-25deg) rotateY(35deg);
-    animation: cubeRotate 12s linear infinite;
-  }
-
-  .cube-face {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    border: 2px solid #00e5ff9c;
-    background: linear-gradient(135deg, #00e5ff20, #a855f738);
-    box-shadow: inset 0 0 30px #00e5ff12;
-    color: var(--cyan);
-    font-size: 34px;
-    font-weight: 900;
-    backface-visibility: visible;
-  }
-
-  .cube-front  { transform: translateZ(72px); }
-  .cube-back   { transform: rotateY(180deg) translateZ(72px); }
-  .cube-right  { transform: rotateY(90deg) translateZ(72px); }
-  .cube-left   { transform: rotateY(-90deg) translateZ(72px); }
-  .cube-top    { transform: rotateX(90deg) translateZ(72px); }
-  .cube-bottom { transform: rotateX(-90deg) translateZ(72px); }
-
-  @keyframes cubeRotate {
-    0%   { transform: rotateX(-25deg) rotateY(0deg); }
-    100% { transform: rotateX(335deg) rotateY(360deg); }
-  }
-
-  .about-points {
-    display: grid;
-    gap: 12px;
-    margin-top: 23px;
-  }
-
-  .about-point {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 12px 14px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: #ffffff04;
-  }
-
-  .about-point span {
-    color: var(--cyan);
-    font-size: 19px;
-  }
-
-  .about-point strong {
-    display: block;
-    font-size: 14px;
-  }
-
-  .about-point small {
-    display: block;
-    color: var(--muted);
-    font-size: 12px;
-  }
-
-  /* Why choose us */
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .feature-box {
-    padding: 24px;
-    text-align: center;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: #10152b99;
-    transition: transform .3s, border-color .3s;
-  }
-
-  .feature-box:hover {
-    transform: translateY(-7px);
-    border-color: #a855f780;
-  }
-
-  .feature-box .feature-symbol {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-
-  .feature-box h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
-  }
-
-  .feature-box p {
-    font-size: 13px;
-    margin: 0;
-  }
-
-  /* Contact */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 25px;
-    align-items: stretch;
-  }
-
-  .contact-info,
-  .contact-form {
-    padding: 30px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    background: linear-gradient(145deg, #121a31, #0b1022);
-  }
-
-  .contact-info h3,
-  .contact-form h3 {
-    font-size: 23px;
-    margin-bottom: 13px;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .contact-link:last-child {
-    border-bottom: 0;
-  }
-
-  .contact-link .contact-icon {
-    font-size: 22px;
-  }
-
-  .contact-link strong {
-    display: block;
-    font-size: 14px;
-  }
-
-  .contact-link small {
-    display: block;
-    color: var(--muted);
-    overflow-wrap: anywhere;
-  }
-
-  .contact-form label {
-    display: block;
-    font-size: 13px;
-    margin: 14px 0 6px;
-    color: #d8def0;
-  }
-
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    display: block;
-    width: 100%;
-    color: var(--white);
-    background: #070c1c;
-    border: 1px solid #ffffff20;
-    border-radius: 9px;
-    padding: 12px 13px;
-    outline: none;
-  }
-
-  .contact-form input:focus,
-  .contact-form textarea:focus,
-  .contact-form select:focus {
-    border-color: var(--cyan);
-    box-shadow: 0 0 0 3px #00e5ff10;
-  }
-
-  .contact-form textarea {
-    min-height: 115px;
-    resize: vertical;
-  }
-
-  .contact-form select option {
-    background: #10152b;
-  }
-
-  .contact-form .btn {
-    width: 100%;
-    margin-top: 18px;
-  }
-
-  /* Call to action */
-  .cta-panel {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 55px 25px;
-    border: 1px solid #00e5ff40;
-    border-radius: 22px;
-    background:
-      radial-gradient(ellipse at 10% 0%, #a855f726, transparent 50%),
-      radial-gradient(ellipse at 100% 100%, #00e5ff16, transparent 45%),
-      #10152b;
-  }
-
-  .cta-panel h2 {
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.2;
-    margin-bottom: 15px;
-  }
-
-  .cta-panel p {
-    max-width: 600px;
-    margin: 0 auto 24px;
-  }
-
-  /* Footer */
-  .site-footer {
-    padding: 28px 0;
-    border-top: 1px solid var(--border);
-    background: #050713;
-  }
-
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .footer-inner p {
-    margin: 0;
-    font-size: 12px;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 17px;
-    flex-wrap: wrap;
-    font-size: 12px;
-    color: var(--muted);
-  }
-
-  .footer-links a:hover {
-    color: var(--cyan);
-  }
-
-  /* WhatsApp floating link */
-  .whatsapp-float {
-    position: fixed;
-    z-index: 90;
-    right: 19px;
-    bottom: 20px;
-    width: 54px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: #20c875;
-    color: #04150b;
-    font-size: 25px;
-    box-shadow: 0 7px 28px #20c87545;
-    transition: transform .25s;
-  }
-
-  .whatsapp-float:hover {
-    transform: translateY(-5px) scale(1.05);
-  }
-
-  /* Scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .7s ease, transform .7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Tablet and mobile */
-  @media (max-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-copy {
-      text-align: center;
-    }
-
-    .hero-copy > p {
-      margin-inline: auto;
-    }
-
-    .hero-actions {
-      justify-content: center;
-    }
-
-    .device-scene {
-      width: min(540px, 100%);
-      margin: 0 auto;
-    }
-
-    .services-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about-panel {
-      grid-template-columns: 1fr;
-    }
-
-    .about-visual {
-      order: -1;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .container {
-      width: 90%;
-    }
-
-    .section {
-      padding: 65px 0;
-    }
-
-    .nav {
-      min-height: 68px;
-      flex-wrap: wrap;
-      padding: 12px 0;
-    }
-
-    .logo {
-      font-size: 18px;
-    }
-
-    .nav-links {
-      width: 100%;
-      justify-content: center;
-      gap: 17px;
-      flex-wrap: wrap;
-      padding-bottom: 5px;
-    }
-
-    .nav-links a {
-      font-size: 12px;
-    }
-
-    .nav-cta {
-      padding: 5px 9px;
-    }
-
-    .hero {
-      min-height: auto;
-      padding: 60px 0 45px;
-    }
-
-    .hero h1 {
-      letter-spacing: -1.5px;
-    }
-
-    .device-scene {
-      min-height: 320px;
-      transform: scale(.94);
-      transform-origin: center;
-    }
-
-    .screen-content {
-      min-height: 180px;
-      padding: 10px;
-    }
-
-    .laptop-wrap {
-      max-width: 390px;
-    }
-
-    .phone {
-      width: 83px;
-      height: 160px;
-      right: -2%;
-    }
-
-    .phone-heading {
-      font-size: 11px;
-    }
-
-    .chip-one,
-    .chip-two {
-      font-size: 9px;
-      padding: 7px 9px;
-    }
-
-    .services-grid,
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .service-card {
-      min-height: 190px;
-    }
-
-    .about-panel,
-    .contact-info,
-    .contact-form {
-      padding: 23px;
-    }
-
-    .about-visual {
-      min-height: 220px;
-    }
-
-    .footer-inner {
-      justify-content: center;
-      text-align: center;
-    }
-
-    .footer-links {
-      justify-content: center;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: .01ms !important;
-      animation-iteration-count: 1 !important;
-      scroll-behavior: auto !important;
-      transition-duration: .01ms !important;
-    }
-
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
-  }
-    </style>
-    
+:root {
+  --bg: #080816;
+  --panel: #111126;
+  --panel2: #171731;
+  --text: #f5f5ff;
+  --muted: #aaaac5;
+  --purple: #a855f7;
+  --cyan: #00e5ff;
+  --border: rgba(168,85,247,.25);
+  --gradient: linear-gradient(110deg,#a855f7,#00e5ff);
+  --shadow: 0 0 35px rgba(0,229,255,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(120,50,220,.12),transparent 35%),
+    radial-gradient(ellipse at 90% 35%,rgba(0,180,255,.08),transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background .3s,color .3s;
+}
+
+body.light-theme {
+  --bg: #f5f6ff;
+  --panel: #ffffff;
+  --panel2: #ededff;
+  --text: #17152c;
+  --muted: #595a75;
+  --border: rgba(100,60,180,.2);
+  --shadow: 0 8px 30px rgba(30,20,80,.08);
+  background: #f5f6ff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(1150px,92%);
+  margin: auto;
+}
+
+.gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px,5vw,46px);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--cyan);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--gradient);
+  color: #080816;
+  font-weight: 700;
+  transition: transform .25s,box-shadow .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,229,255,.18);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.045),
+    rgba(255,255,255,.015)
+  );
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,8,22,.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+.light-theme header {
+  background: rgba(245,246,255,.9);
+}
+
+.navbar {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.6px;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+  border-radius: 11px;
+  background: var(--gradient);
+  color: #080816;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.menu-btn {
+  display: none;
+}
+
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 35px;
+  padding: 75px 0;
+}
+
+.hero h1 {
+  font-size: clamp(40px,6vw,68px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero-copy {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 570px;
+  margin-bottom: 27px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hero-visual {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  perspective: 900px;
+}
+
+.orb {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#a855f7,#00e5ff);
+  filter: blur(80px);
+  opacity: .25;
+  animation: orbPulse 5s ease-in-out infinite alternate;
+}
+
+.device {
+  position: relative;
+  z-index: 1;
+  width: min(100%,430px);
+  padding: 13px;
+  border-radius: 22px;
+  background: linear-gradient(135deg,#29294b,#090916);
+  border: 1px solid rgba(0,229,255,.5);
+  box-shadow: 0 20px 80px rgba(0,0,0,.45),
+              0 0 40px rgba(168,85,247,.16);
+  transform: rotateY(-8deg) rotateX(3deg);
+  animation: deviceFloat 5s ease-in-out infinite;
+}
+
+.device-screen {
+  background: #101025;
+  border-radius: 13px;
+  min-height: 275px;
+  overflow: hidden;
+  padding: 18px;
+}
+
+.screen-top {
+  display: flex;
+  gap: 6px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #292947;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+
+.dot:nth-child(2) {
+  background: var(--cyan);
+}
+
+.dot:nth-child(3) {
+  background: #ff72b6;
+}
+
+.screen-banner {
+  margin-top: 22px;
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(130deg,#32105e,#082d48);
+}
+
+.screen-banner strong {
+  display: block;
+  font-size: 23px;
+  line-height: 1.25;
+  margin-bottom: 9px;
+}
+
+.screen-lines {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.screen-lines span {
+  height: 42px;
+  border-radius: 8px;
+  background: #20203e;
+  border: 1px solid #303052;
+}
+
+.float-chip {
+  position: absolute;
+  z-index: 2;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  animation: chipFloat 4s ease-in-out infinite;
+}
+
+.chip-one {
+  top: 55px;
+  left: 0;
+}
+
+.chip-two {
+  right: 0;
+  bottom: 70px;
+  animation-delay: -2s;
+}
+
+@keyframes orbPulse {
+  from {transform: scale(.9);opacity:.18}
+  to {transform: scale(1.12);opacity:.32}
+}
+
+@keyframes deviceFloat {
+  0%,100% {transform: translateY(0) rotateY(-8deg) rotateX(3deg)}
+  50% {transform: translateY(-12px) rotateY(-5deg) rotateX(2deg)}
+}
+
+@keyframes chipFloat {
+  0%,100% {transform: translateY(0)}
+  50% {transform: translateY(-9px)}
+}
+</style>
+</head>
+
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header">
-    <nav class="nav container">
-      <a class="logo" href="#home">
-        <span class="gradient">AzDar</span> Web Studio
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="nav-cta" href="#contact">Get Started ↗</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero section -->
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-
-        <div class="hero-copy">
-          <span class="eyebrow">Creative Digital Solutions</span>
-
-          <h1>
-            Build Your Business
-            <span class="gradient">Online.</span>
-          </h1>
-
-          <p>
-            We create professional, modern and mobile-friendly websites
-            designed to help your business build a powerful online presence.
-          </p>
-
-          <p>
-            From custom websites to Shopify store design, AzDar Web Studio
-            helps bring your digital vision to life.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">
-              Start Your Project ↗
-            </a>
-
-            <a class="btn btn-outline" href="#services">
-              Explore Services ↓
-            </a>
-          </div>
-
-          <div class="hero-note">
-            ✦ Creative Design &nbsp; ✦ Modern Technology &nbsp; ✦ Responsive Layouts
-          </div>
-        </div>
-
-        <!-- CSS-created animated 3D device scene -->
-        <div class="device-scene" id="deviceScene">
-          <div class="scene-glow"></div>
-          <div class="orbit"></div>
-          <div class="orbit orbit-two"></div>
-
-          <div class="scene-spark spark-one">✦</div>
-          <div class="scene-spark spark-two">✧</div>
-
-          <div class="floating-chip chip-one">
-            ⚡ Modern Web Design
-          </div>
-
-          <div class="floating-chip chip-two">
-            ◈ Mobile Friendly
-          </div>
-
-          <!-- Laptop -->
-          <div class="laptop-wrap" id="laptop3d">
-            <div class="laptop-screen">
-              <div class="screen-content">
-
-                <div class="mock-browser">
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <span class="browser-dot"></span>
-                  <div class="mock-address"></div>
-                </div>
-
-                <div class="mock-brand">AzDar Web Studio</div>
-
-                <div class="mock-title">
-                  Your Vision,<br>
-                  <span class="gradient">Our Code.</span>
-                </div>
-
-                <div class="mock-line"></div>
-                <div class="mock-line short"></div>
-                <div class="mock-button"></div>
-
-                <div class="mock-cards">
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                  <div class="mock-card"></div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="laptop-base"></div>
-          </div>
-
-          <!-- Smartphone -->
-          <div class="phone" id="phone3d">
-            <div class="phone-screen">
-              <div class="phone-label">AZDAR STUDIO</div>
-
-              <div class="phone-heading">
-                Your Business,
-                <span class="gradient">Online.</span>
-              </div>
-
-              <div class="phone-line"></div>
-              <div class="phone-line" style="width:70%"></div>
-
-              <div class="phone-block"></div>
-
-              <div class="phone-line"></div>
-              <div class="phone-line" style="width:75%"></div>
-
-              <div class="phone-block" style="height:22px"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <span class="eyebrow">What We Do</span>
-          <h2>Our Digital <span class="gradient">Services</span></h2>
-          <p>
-            Creative digital solutions to help businesses build their
-            brand and grow online.
-          </p>
-        </div>
-
-        <div class="services-grid">
-
-          <article class="service-card reveal">
-            <span class="service-number">01</span>
-            <div class="service-icon">🌐</div>
-            <h3>Professional Websites</h3>
-            <p>
-              Modern business websites with professional layouts,
-              clear content and a polished online presence.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <span class="service-number">02</span>
-            <div class="service-icon">🛍️</div>
-            <h3>Shopify Store Design</h3>
-            <p>
-              Attractive Shopify storefront designs to showcase
-              products and create a smooth shopping experience.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <span class="service-number">03</span>
-            <div class="service-icon">📱</div>
-            <h3>Mobile-Friendly Design</h3>
-            <p>
-              Responsive website layouts designed to adapt to
-              mobile phones, tablets and desktop screens.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <span class="service-number">04</span>
-            <div class="service-icon">💻</div>
-            <h3>Custom Websites</h3>
-            <p>
-              Custom website solutions tailored to your business,
-              personal brand or project requirements.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <span class="service-number">05</span>
-            <div class="service-icon">📣</div>
-            <h3>Social Media Services</h3>
-            <p>
-              Digital support for your social media presence
-              and professional brand presentation.
-            </p>
-          </article>
-
-          <article class="service-card reveal">
-            <span class="service-number">06</span>
-            <div class="service-icon">✨</div>
-            <h3>Creative Digital Solutions</h3>
-            <p>
-              Tell us about your idea and discuss a suitable
-              digital solution for your business goals.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-  </main>
-  
-<!-- About Us -->
-<section class="section" id="about">
-  <div class="container">
-
-    <div class="section-heading reveal">
-      <span class="eyebrow">Who We Are</span>
-      <h2>About <span class="gradient">AzDar</span></h2>
-      <p>Creative thinking meets modern web design.</p>
-    </div>
-
-    <div class="about-panel reveal">
-
-      <div class="about-content">
-        <h3>
-          Your Vision,<br>
-          <span class="gradient">Our Code.</span>
-        </h3>
-
-        <p>
-          Welcome to AzDar Web Studio. Our goal is to help businesses
-          and individuals establish a professional online presence
-          through modern website design.
-        </p>
-
-        <p>
-          We focus on clean layouts, attractive visuals, responsive
-          designs and solutions tailored to each client's requirements.
-          Every project starts with understanding your idea and goals.
-        </p>
-
-        <div class="about-points">
-
-          <div class="about-point">
-            <span>✦</span>
-            <div>
-              <strong>Modern Design</strong>
-              <small>Clean, creative and professional layouts.</small>
-            </div>
-          </div>
-
-          <div class="about-point">
-            <span>▣</span>
-            <div>
-              <strong>Responsive Websites</strong>
-              <small>Designed for phones, tablets and computers.</small>
-            </div>
-          </div>
-
-          <div class="about-point">
-            <span>⚡</span>
-            <div>
-              <strong>Client-Focused Solutions</strong>
-              <small>Design choices based on your project needs.</small>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CSS 3D rotating cube -->
-      <div class="about-visual">
-        <div class="cube">
-          <div class="cube-face cube-front">A</div>
-          <div class="cube-face cube-back">Z</div>
-          <div class="cube-face cube-right">✦</div>
-          <div class="cube-face cube-left">W</div>
-          <div class="cube-face cube-top">✧</div>
-          <div class="cube-face cube-bottom">D</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Why Choose Us -->
-<section class="section" id="why-us">
-  <div class="container">
-
-    <div class="section-heading reveal">
-      <span class="eyebrow">Our Approach</span>
-      <h2>Why Choose <span class="gradient">Us?</span></h2>
-      <p>
-        We aim to make your website project clear, creative
-        and focused on your requirements.
-      </p>
-    </div>
-
-    <div class="features-grid">
-
-      <article class="feature-box reveal">
-        <div class="feature-symbol">🎨</div>
-        <h3>Creative Designs</h3>
-        <p>
-          Unique visual styles that help your business stand out
-          with a professional appearance.
-        </p>
-      </article>
-
-      <article class="feature-box reveal">
-        <div class="feature-symbol">📱</div>
-        <h3>Mobile First</h3>
-        <p>
-          Responsive layouts so visitors can browse your website
-          comfortably on different screen sizes.
-        </p>
-      </article>
-
-      <article class="feature-box reveal">
-        <div class="feature-symbol">🤝</div>
-        <h3>Direct Communication</h3>
-        <p>
-          Discuss your project requirements directly with us
-          before deciding on the design.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="section" id="contact">
-  <div class="container">
-
-    <div class="section-heading reveal">
-      <span class="eyebrow">Let's Work Together</span>
-      <h2>Start Your <span class="gradient">Project</span></h2>
-      <p>
-        Have a website idea? Share your requirements
-        and contact AzDar Web Studio.
-      </p>
-    </div>
-
-    <div class="contact-grid">
-
-      <!-- Contact information -->
-      <div class="contact-info reveal">
-        <h3>Get In Touch</h3>
-
-        <p>
-          Tell us what you want to build. We'll discuss your
-          requirements and a suitable way forward.
-        </p>
-
-        <a
-          class="contact-link"
-          href="https://wa.me/923002867506"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="contact-icon">💬</span>
-          <span>
-            <strong>WhatsApp</strong>
-            <small>03002867506</small>
-          </span>
-        </a>
-
-        <a
-          class="contact-link"
-          href="mailto:azdarwattoo@gmail.com"
-        >
-          <span class="contact-icon">✉️</span>
-          <span>
-            <strong>Email</strong>
-            <small>azdarwattoo@gmail.com</small>
-          </span>
-        </a>
-
-        <a
-          class="contact-link"
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="contact-icon">🌐</span>
-          <span>
-            <strong>Facebook</strong>
-            <small>Find us on Facebook</small>
-          </span>
-        </a>
-
-      </div>
-
-      <!-- WhatsApp inquiry form -->
-      <form class="contact-form reveal" id="projectForm">
-        <h3>Tell Us Your Idea</h3>
-        <p>Fill in the details to prepare a WhatsApp message.</p>
-
-        <label for="clientName">Your Name</label>
-        <input
-          id="clientName"
-          name="name"
-          type="text"
-          placeholder="Enter your name"
-          required
-          maxlength="80"
-        >
-
-        <label for="clientEmail">Your Email (Optional)</label>
-        <input
-          id="clientEmail"
-          name="email"
-          type="email"
-          placeholder="Enter your email"
-          maxlength="120"
-        >
-
-        <label for="projectService">Which Service Do You Need?</label>
-        <select id="projectService" name="service" required>
-          <option value="">Select a service</option>
-          <option>Professional Website</option>
-          <option>Shopify Store Design</option>
-          <option>Mobile-Friendly Website</option>
-          <option>Custom Website</option>
-          <option>Social Media Services</option>
-          <option>Other Digital Service</option>
-        </select>
-
-        <label for="projectBudget">Your Budget (Optional)</label>
-        <select id="projectBudget" name="budget">
-          <option value="">Select your budget</option>
-          <option>Under Rs. 10,000</option>
-          <option>Rs. 10,000 - 20,000</option>
-          <option>Rs. 20,000 - 50,000</option>
-          <option>Rs. 50,000+</option>
-          <option>Need a quotation</option>
-        </select>
-
-        <label for="projectDetails">Project Details</label>
-        <textarea
-          id="projectDetails"
-          name="details"
-          placeholder="Describe the website or service you need..."
-          required
-          maxlength="1500"
-        ></textarea>
-
-        <button class="btn btn-primary" type="submit">
-          Send Inquiry on WhatsApp ↗
-        </button>
-      </form>
-
-    </div>
-  </div>
-</section>
-
-<!-- Final Call To Action -->
-<section class="section">
-  <div class="container">
-    <div class="cta-panel reveal">
-      <span class="eyebrow">Let's Build Something Great</span>
-
-      <h2>
-        Ready to Take Your Business
-        <span class="gradient">Online?</span>
-      </h2>
-
-      <p>
-        Let's discuss your idea and explore a digital solution
-        that suits your business.
-      </p>
-
-      <a
-        class="btn btn-primary"
-        href="https://wa.me/923002867506?text=Assalam-o-Alaikum%2C%20I%20want%20to%20discuss%20a%20project%20with%20AzDar%20Web%20Studio."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Let's Talk on WhatsApp ↗
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <a class="logo" href="#home">
-      <span class="gradient">AzDar</span> Web Studio
+<header>
+  <div class="container navbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">A</span>AzDar <span class="gradient">Studio</span>
     </a>
 
-    <p>
-      © <span id="currentYear"></span> AzDar Web Studio.
-      All rights reserved.
-    </p>
-
-    <div class="footer-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#why">Why Us</a>
       <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☼</button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
   </div>
+</header>
 
-  <div class="container" style="text-align:center; margin-top:12px">
-    <p style="font-size:12px; margin:0">
-      AzDar Web Studio — Your Vision, Our Code.
-      <br>Created by Azmat Ali.
+<main>
+
+<section class="container hero" id="home">
+  <div class="reveal">
+    <span class="eyebrow">Creative Digital Solutions</span>
+
+    <h1>
+      Build Your Business
+      <span class="gradient">Beyond Limits.</span>
+    </h1>
+
+    <p class="hero-copy">
+      We create modern websites, digital experiences and online solutions
+      that help your business stand out in a competitive world.
     </p>
+
+    <div class="hero-buttons">
+      <a class="btn" href="#contact">Start Your Project ↗</a>
+      <a class="btn btn-outline" href="#services">Explore Services</a>
+    </div>
+
+    <p class="hero-note">
+      ✦ Modern Design &nbsp; ✦ Mobile Friendly &nbsp; ✦ Built for Your Business
+    </p>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="orb"></div>
+
+    <div class="float-chip chip-one">✦ Creative Design</div>
+
+    <div class="device">
+      <div class="device-screen">
+        <div class="screen-top">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="screen-banner">
+          <strong>
+            YOUR NEXT<br>
+            <span class="gradient">BIG IDEA.</span>
+          </strong>
+
+          <p style="color:#c9c9e7;font-size:12px">
+            Designed for the digital future.
+          </p>
+        </div>
+
+        <div class="screen-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="float-chip chip-two">⌘ Digital Innovation</div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <span class="eyebrow">What We Do</span>
+
+      <h2>
+        Digital Services for
+        <span class="gradient">Your Growth</span>
+      </h2>
+
+      <p>
+        Creative, flexible and professional services to build your digital presence.
+      </p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">⌘</div>
+        <h3>Website Development</h3>
+        <p>
+          Modern, responsive websites for businesses, portfolios and personal brands.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="Website Development">
+          Discuss Project ↗
+        </a>
+      </article>
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">▣</div>
+        <h3>Shopify Store Design</h3>
+        <p>
+          Professional Shopify storefront layouts designed for a smoother shopping experience.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="Shopify Store Design">
+          Discuss Project ↗
+        </a>
+      </article>
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">◎</div>
+        <h3>Social Media Services</h3>
+        <p>
+          Digital profile setup, branded content ideas and a consistent online identity.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="Social Media Services">
+          Discuss Project ↗
+        </a>
+      </article>
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">✧</div>
+        <h3>UI / UX Design</h3>
+        <p>
+          Clean layouts and intuitive user journeys for a professional digital experience.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="UI UX Design">
+          Discuss Project ↗
+        </a>
+      </article>
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">◈</div>
+        <h3>Website Redesign</h3>
+        <p>
+          Refresh an outdated website with a modern visual style and responsive layout.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="Website Redesign">
+          Discuss Project ↗
+        </a>
+      </article>
+
+      <article class="service-card glass reveal">
+        <div class="service-icon">↗</div>
+        <h3>Digital Consultation</h3>
+        <p>
+          Get guidance on your website structure, online presence and digital project plan.
+        </p>
+        <a href="#contact" class="service-link"
+           data-service="Digital Consultation">
+          Discuss Project ↗
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-art reveal">
+      <div class="about-orbit"></div>
+      <div class="about-logo glass">
+        <span class="brand-mark">A</span>
+        <h2>AzDar <span class="gradient">Web Studio</span></h2>
+        <p>Your Vision, Our Code.</p>
+        <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">About Our Studio</span>
+      <h2 class="big-heading">Ideas Into <span class="gradient">Digital Reality</span></h2>
+      <p class="muted">
+        AzDar Web Studio helps businesses and individuals build a professional
+        online presence through modern design and practical digital solutions.
+      </p>
+      <p class="muted">
+        We focus on clear communication, responsive layouts and designs that
+        look professional on both mobile phones and computers.
+      </p>
+      <div class="about-points">
+        <p>✓ Mobile-friendly designs</p>
+        <p>✓ Custom solutions for your needs</p>
+        <p>✓ Direct project communication</p>
+      </div>
+      <a class="btn" href="#contact">Let's Work Together ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Built Around <span class="gradient">Your Vision</span></h2>
+      <p>Our goal is to make your digital journey simple, creative and professional.</p>
+    </div>
+
+    <div class="features-grid">
+      <article class="feature-card glass reveal">
+        <span>⚡</span>
+        <h3>Modern Approach</h3>
+        <p>Fresh design concepts with a focus on usability and clarity.</p>
+      </article>
+      <article class="feature-card glass reveal">
+        <span>📱</span>
+        <h3>Responsive Layout</h3>
+        <p>Layouts that adapt to mobile, tablet and desktop screens.</p>
+      </article>
+      <article class="feature-card glass reveal">
+        <span>🎯</span>
+        <h3>Client Focused</h3>
+        <p>Project details and scope are discussed around your requirements.</p>
+      </article>
+      <article class="feature-card glass reveal">
+        <span>🤝</span>
+        <h3>Direct Support</h3>
+        <p>Contact us directly to discuss your idea before starting work.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+.services-grid,.features-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+.service-card,.feature-card {
+  border-radius:19px;
+  padding:26px;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.service-card:hover,.feature-card:hover {
+  transform:translateY(-7px);
+  border-color:var(--cyan);
+  box-shadow:0 15px 35px rgba(0,229,255,.08);
+}
+.service-icon {
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  margin-bottom:18px;
+  border-radius:15px;
+  background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(0,229,255,.12));
+  border:1px solid var(--border);
+  color:var(--cyan);
+  font-size:25px;
+}
+.service-card h3,.feature-card h3 {
+  margin-bottom:10px;
+  font-size:19px;
+}
+.service-card p,.feature-card p,.muted {
+  color:var(--muted);
+  font-size:14px;
+}
+.service-link {
+  display:inline-block;
+  margin-top:20px;
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:bold;
+}
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+}
+.about-art {
+  min-height:340px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.about-orbit {
+  position:absolute;
+  width:280px;
+  height:280px;
+  border:1px solid rgba(0,229,255,.35);
+  border-radius:50%;
+  box-shadow:0 0 55px rgba(168,85,247,.12),inset 0 0 40px rgba(0,229,255,.06);
+  animation:spinOrbit 18s linear infinite;
+}
+.about-logo {
+  position:relative;
+  z-index:1;
+  width:min(330px,95%);
+  padding:36px 20px;
+  border-radius:25px;
+  text-align:center;
+}
+.about-logo .brand-mark {
+  width:65px;
+  height:65px;
+  font-size:30px;
+  margin:0 0 18px;
+}
+.about-logo p {color:var(--muted);margin-top:8px}
+.mini-bars {
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  gap:8px;
+  height:48px;
+  margin-top:25px;
+}
+.mini-bars i {
+  width:14px;
+  height:30px;
+  border-radius:5px;
+  background:var(--gradient);
+  animation:barPulse 1.3s ease-in-out infinite alternate;
+}
+.mini-bars i:nth-child(2){height:42px;animation-delay:.2s}
+.mini-bars i:nth-child(3){height:23px;animation-delay:.4s}
+.mini-bars i:nth-child(4){height:37px;animation-delay:.6s}
+.mini-bars i:nth-child(5){height:18px;animation-delay:.8s}
+@keyframes spinOrbit {to{transform:rotate(360deg)}}
+@keyframes barPulse {to{transform:scaleY(.55);opacity:.6}}
+.big-heading {
+  font-size:clamp(30px,4vw,43px);
+  line-height:1.2;
+  margin-bottom:20px;
+}
+.about-points {margin:22px 0}
+.about-points p {margin:9px 0;color:var(--muted)}
+.feature-card span {
+  display:block;
+  font-size:28px;
+  margin-bottom:15px;
+}
+@media(max-width:850px) {
+  .services-grid,.features-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid {gap:25px}
+}
+@media(max-width:600px) {
+  .services-grid,.features-grid {grid-template-columns:1fr}
+  .about-grid {grid-template-columns:1fr}
+  .about-art {min-height:290px}
+}
+</style>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Let's Connect</span>
+      <h2>Have a Project in <span class="gradient">Mind?</span></h2>
+      <p>Tell us what you need. We'll help you discuss the next steps.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info glass reveal">
+        <h3>Let's build something great.</h3>
+        <p class="muted">Contact AzDar Web Studio to discuss your website or digital project.</p>
+
+        <a class="contact-line" href="https://wa.me/923002867506" target="_blank" rel="noopener">
+          <span>✆</span>
+          <div><small>WhatsApp</small><strong>0300 2867506</strong></div>
+        </a>
+
+        <a class="contact-line" href="mailto:azdarwattoo@gmail.com">
+          <span>✉</span>
+          <div><small>Email</small><strong>azdarwattoo@gmail.com</strong></div>
+        </a>
+
+        <a class="contact-line" href="https://www.facebook.com/" target="_blank" rel="noopener">
+          <span>f</span>
+          <div><small>Facebook</small><strong>Visit Facebook</strong></div>
+        </a>
+
+        <div class="contact-note">✦ Professional websites · Creative digital solutions</div>
+      </div>
+
+      <form id="projectForm" class="contact-form glass reveal">
+        <h3>Tell Us About Your Project</h3>
+
+        <label for="clientName">Your name</label>
+        <input id="clientName" name="name" required maxlength="80" placeholder="Enter your name">
+
+        <label for="clientEmail">Email (optional)</label>
+        <input id="clientEmail" name="email" type="email" maxlength="120" placeholder="you@example.com">
+
+        <label for="projectService">Service required</label>
+        <select id="projectService" name="service" required>
+          <option value="">Choose a service</option>
+          <option>Website Development</option>
+          <option>Shopify Store Design</option>
+          <option>Social Media Services</option>
+          <option>UI UX Design</option>
+          <option>Website Redesign</option>
+          <option>Digital Consultation</option>
+          <option>Other Digital Service</option>
+        </select>
+
+        <label for="projectDetails">Project details</label>
+        <textarea id="projectDetails" name="details" required maxlength="1200" rows="4" placeholder="Describe what you need..."></textarea>
+
+        <button class="btn form-submit" type="submit">Send Inquiry on WhatsApp ↗</button>
+        <p class="form-hint">Your message will open in WhatsApp for you to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container cta-box glass reveal">
+    <span class="eyebrow">Your Next Step</span>
+    <h2>Let's Turn Your <span class="gradient">Idea Into Reality</span></h2>
+    <p class="muted">Start a conversation about your next digital project.</p>
+    <a class="btn" href="https://wa.me/923002867506?text=Hi%20AzDar%20Web%20Studio%2C%20I%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+  </div>
+</section>
+
+<section class="section admin-section" id="admin">
+  <div class="container">
+    <div class="admin-top">
+      <div>
+        <span class="eyebrow">Studio Tools</span>
+        <h2>Demo <span class="gradient">Admin Panel</span></h2>
+        <p class="muted">Manage service cards on this browser.</p>
+      </div>
+      <button class="btn btn-outline" id="adminToggle" type="button">Open Admin</button>
+    </div>
+
+    <div class="admin-panel glass" id="adminPanel" hidden>
+      <div id="adminLogin">
+        <h3>Admin Login</h3>
+        <p class="muted">Enter the demo passcode to edit the service list.</p>
+        <label for="adminPass">Passcode</label>
+        <input id="adminPass" type="password" autocomplete="current-password" placeholder="Enter passcode">
+        <button class="btn" id="adminLoginBtn" type="button">Unlock Panel</button>
+        <p id="adminMessage" class="admin-message" aria-live="polite"></p>
+      </div>
+
+      <div id="adminEditor" hidden>
+        <h3>Manage Services</h3>
+        <p class="muted">Changes save in this browser only.</p>
+
+        <form id="serviceForm" class="admin-form">
+          <input id="editIndex" type="hidden" value="-1">
+
+          <label for="serviceName">Service title</label>
+          <input id="serviceName" maxlength="70" required placeholder="e.g. Website Development">
+
+          <label for="serviceDescription">Service description</label>
+          <textarea id="serviceDescription" maxlength="300" rows="3" required placeholder="Short service description"></textarea>
+
+          <div class="admin-buttons">
+            <button class="btn" type="submit">Save Service</button>
+            <button class="btn btn-outline" type="button" id="cancelEdit">Clear Form</button>
+          </div>
+        </form>
+
+        <div id="adminServiceList" class="admin-service-list"></div>
+        <button class="btn btn-outline" id="adminLogout" type="button">Lock Panel</button>
+      </div>
+
+      <p class="security-note">
+        This front-end demo is not secure authentication. Do not store private information here.
+        Use a real backend for a protected admin system.
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="brand" href="#home"><span class="brand-mark">A</span>AzDar <span class="gradient">Studio</span></a>
+    <p>AzDar Web Studio — Your Vision, Our Code.</p>
+    <p>Created by Azmat Ali</p>
+    <p>© <span id="year"></span> AzDar Web Studio. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- Floating WhatsApp Button -->
-<a
-  class="whatsapp-float"
-  href="https://wa.me/923002867506"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Contact AzDar Web Studio on WhatsApp"
-  title="Chat on WhatsApp"
->
-  ☎
-</a>
+<a class="whatsapp-float" href="https://wa.me/923002867506?text=Hi%20AzDar%20Web%20Studio%2C%20I%20want%20to%20know%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with AzDar Web Studio on WhatsApp">✆</a>
 
+<style>
+.contact-grid {
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:24px;
+  align-items:start;
+}
+.contact-info,.contact-form,.admin-panel {
+  padding:28px;
+  border-radius:20px;
+}
+.contact-info h3,.contact-form h3,.admin-panel h3 {
+  font-size:23px;
+  margin-bottom:12px;
+}
+.contact-line {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:23px;
+  overflow-wrap:anywhere;
+}
+.contact-line>span {
+  flex:0 0 43px;
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--panel2);
+  color:var(--cyan);
+  font-size:21px;
+}
+.contact-line small,.contact-line strong {display:block}
+.contact-line small {color:var(--muted)}
+.contact-line strong {font-size:14px}
+.contact-note {margin-top:28px;color:var(--cyan);font-size:13px}
+.contact-form label,.admin-panel label {
+  display:block;
+  margin:14px 0 6px;
+  color:var(--muted);
+  font-size:13px;
+}
+.contact-form input,.contact-form textarea,.contact-form select,
+.admin-panel input,.admin-panel textarea {
+  width:100%;
+  padding:12px 13px;
+  color:var(--text);
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  outline:none;
+}
+.contact-form input:focus,.contact-form textarea:focus,
+.contact-form select:focus,.admin-panel input:focus,
+.admin-panel textarea:focus {border-color:var(--cyan)}
+.contact-form textarea,.admin-panel textarea {resize:vertical}
+.contact-form select option {background:var(--panel);color:var(--text)}
+.form-submit {width:100%;margin-top:18px}
+.form-hint {font-size:12px;color:var(--muted);margin-top:10px}
+.cta-box {padding:48px 22px;text-align:center;border-radius:24px}
+.cta-box h2 {font-size:clamp(28px,5vw,44px);margin-bottom:12px}
+.cta-box .btn {margin-top:22px}
+.admin-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:22px;
+}
+.admin-panel[hidden],#adminLogin[hidden],#adminEditor[hidden] {display:none}
+.admin-panel h3 {margin-top:8px}
+.admin-panel .btn {margin-top:15px}
+.admin-form {max-width:650px}
+.admin-buttons {display:flex;flex-wrap:wrap;gap:10px}
+.admin-service-list {display:grid;gap:10px;margin:25px 0}
+.admin-service-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  background:var(--panel2);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.admin-service-item p {color:var(--muted);font-size:13px}
+.admin-service-actions {display:flex;flex-wrap:wrap;gap:7px}
+.admin-service-actions button {
+  padding:7px 10px;
+  border-radius:8px;
+  color:var(--text);
+  background:var(--panel);
+  border:1px solid var(--border);
+}
+.admin-message,.security-note {color:var(--muted);font-size:12px;margin-top:12px}
+.site-footer {border-top:1px solid var(--border);padding:28px 0}
+.footer-inner {text-align:center;display:grid;justify-items:center;gap:10px}
+.footer-inner p {color:var(--muted);font-size:12px}
+.whatsapp-float {
+  position:fixed;
+  z-index:900;
+  right:20px;
+  bottom:20px;
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#04140d;
+  background:#25d366;
+  font-size:28px;
+  box-shadow:0 8px 25px rgba(37,211,102,.3);
+  transition:transform .2s;
+}
+.whatsapp-float:hover {transform:scale(1.08)}
+@media(max-width:850px) {
+  .contact-grid {grid-template-columns:1fr}
+}
+@media(max-width:700px) {
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    padding:20px 5%;
+    background:var(--panel);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    align-items:stretch;
+    gap:14px;
+  }
+  .nav-links.open {display:flex}
+  .menu-btn {display:grid}
+  .navbar {min-height:70px}
+  .hero {grid-template-columns:1fr;padding:60px 0 30px;gap:10px}
+  .hero-visual {min-height:330px}
+  .hero h1 {letter-spacing:-1px}
+  .chip-one {left:0;top:28px}
+  .chip-two {right:0;bottom:32px}
+  .device {transform:none;animation:deviceFloatMobile 5s ease-in-out infinite}
+  .admin-top {align-items:flex-start;flex-direction:column}
+  .admin-service-item {align-items:flex-start;flex-direction:column}
+}
+@keyframes deviceFloatMobile {
+  0%,100% {transform:translateY(0)}
+  50% {transform:translateY(-8px)}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}
+          </style>
+          
 <script>
-  // Automatically update footer year
-  document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
+"use strict";
 
-  // Reveal sections and cards when scrolling
-  const revealElements = document.querySelectorAll(".reveal");
+const WHATSAPP_NUMBER = "923002867506";
+const DEMO_ADMIN_PASSCODE = "AZDAR2026";
 
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+/* Footer year */
+$("#year").textContent = new Date().getFullYear();
+
+/* Mobile navigation */
+const navLinks = $("#navLinks");
+
+$("#menuBtn").addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  $("#menuBtn").textContent =
+    navLinks.classList.contains("open") ? "✕" : "☰";
+});
+
+$$(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    $("#menuBtn").textContent = "☰";
+  });
+});
+
+/* Theme toggle */
+const savedTheme = localStorage.getItem("azdar-theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-theme");
+}
+
+function updateThemeButton() {
+  $("#themeToggle").textContent =
+    document.body.classList.contains("light-theme") ? "☾" : "☼";
+}
+
+updateThemeButton();
+
+$("#themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+
+  const theme = document.body.classList.contains("light-theme")
+    ? "light"
+    : "dark";
+
+  localStorage.setItem("azdar-theme", theme);
+  updateThemeButton();
+});
+
+/* Scroll reveal animation */
+const revealItems = $$(".reveal");
+
+const animationStyle = document.createElement("style");
+
+animationStyle.textContent = `
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media(prefers-reduced-motion:reduce) {
+  .reveal {opacity:1;transform:none}
+}`;
+
+document.head.appendChild(animationStyle);
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("visible"));
+}
+
+/* WhatsApp inquiry form */
+$("#projectForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = $("#clientName").value.trim();
+  const email = $("#clientEmail").value.trim();
+  const service = $("#projectService").value;
+  const details = $("#projectDetails").value.trim();
+
+  if (!name || !service || !details) {
+    alert("Please fill in your name, service and project details.");
+    return;
+  }
+
+  const message = [
+    "Assalam-o-Alaikum AzDar Web Studio!",
+    "",
+    "I want to discuss a project.",
+    "Name: " + name,
+    "Email: " + (email || "Not provided"),
+    "Service: " + service,
+    "Project Details: " + details
+  ].join("\n");
+
+  const url = "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener");
+});
+
+/* Choose service from card */
+$$(".service-link").forEach(link => {
+  link.addEventListener("click", () => {
+    const service = link.dataset.service;
+    const select = $("#projectService");
+
+    let option = [...select.options].find(item =>
+      item.value === service || item.textContent.trim() === service
     );
 
-    revealElements.forEach(function (element) {
-      revealObserver.observe(element);
+    if (!option) {
+      option = new Option(service, service);
+      select.add(option);
+    }
+
+    select.value = service;
+  });
+});
+
+/* Admin panel */
+const adminPanel = $("#adminPanel");
+const adminLogin = $("#adminLogin");
+const adminEditor = $("#adminEditor");
+const adminMessage = $("#adminMessage");
+
+let adminUnlocked = false;
+
+$("#adminToggle").addEventListener("click", () => {
+  adminPanel.hidden = !adminPanel.hidden;
+
+  $("#adminToggle").textContent =
+    adminPanel.hidden ? "Open Admin" : "Close Admin";
+
+  if (!adminPanel.hidden) {
+    adminPanel.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+  }
+});
+
+$("#adminLoginBtn").addEventListener("click", () => {
+  if ($("#adminPass").value === DEMO_ADMIN_PASSCODE) {
+    adminUnlocked = true;
+    adminLogin.hidden = true;
+    adminEditor.hidden = false;
+    adminMessage.textContent = "";
+    $("#adminPass").value = "";
+    renderAdminServices();
   } else {
-    revealElements.forEach(function (element) {
-      element.classList.add("visible");
-    });
+    adminMessage.textContent =
+      "Incorrect passcode. Please try again.";
   }
+});
 
-  // Interactive 3D movement on desktop
-  const deviceScene = document.getElementById("deviceScene");
-  const laptop = document.getElementById("laptop3d");
-  const phone = document.getElementById("phone3d");
-
-  const canHover = window.matchMedia(
-    "(hover: hover) and (pointer: fine)"
-  );
-
-  if (deviceScene && laptop && phone && canHover.matches) {
-    deviceScene.addEventListener("pointermove", function (event) {
-      const rect = deviceScene.getBoundingClientRect();
-
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = (event.clientY - rect.top) / rect.height;
-
-      const rotateY = (x - 0.5) * 16;
-      const rotateX = (0.5 - y) * 10;
-
-      laptop.style.animation = "none";
-      laptop.style.transform =
-        "translateY(-5px) rotateY(" +
-        (-13 + rotateY) +
-        "deg) rotateX(" +
-        (5 + rotateX) +
-        "deg)";
-
-      phone.style.animation = "none";
-      phone.style.transform =
-        "rotateY(" +
-        (-14 + rotateY * 0.7) +
-        "deg) rotateZ(" +
-        (8 + rotateX * 0.35) +
-        "deg)";
-    });
-
-    deviceScene.addEventListener("pointerleave", function () {
-      laptop.style.transform = "";
-      laptop.style.animation = "";
-      phone.style.transform = "";
-      phone.style.animation = "";
-    });
+$("#adminPass").addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    $("#adminLoginBtn").click();
   }
+});
 
-  // Interactive 3D tilt for service cards
-  const serviceCards = document.querySelectorAll(".service-card");
+const defaultServices = $$(".service-card").map(card => ({
+  title: $("h3", card).textContent.trim(),
+  description: $("p", card).textContent.trim()
+}));
 
-  if (canHover.matches) {
-    serviceCards.forEach(function (card) {
-      card.addEventListener("pointermove", function (event) {
-        const rect = card.getBoundingClientRect();
+let services = defaultServices;
 
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
+try {
+  const savedServices = localStorage.getItem("azdar-services");
 
-        const rotateY = (x - 0.5) * 8;
-        const rotateX = (0.5 - y) * 7;
+  if (savedServices) {
+    const parsed = JSON.parse(savedServices);
 
-        card.style.transform =
-          "translateY(-7px) rotateX(" +
-          rotateX +
-          "deg) rotateY(" +
-          rotateY +
-          "deg)";
-      });
-
-      card.addEventListener("pointerleave", function () {
-        card.style.transform = "";
-      });
-    });
+    if (Array.isArray(parsed) && parsed.every(item =>
+      item &&
+      typeof item.title === "string" &&
+      typeof item.description === "string"
+    )) {
+      services = parsed;
+    }
   }
+} catch (error) {
+  services = defaultServices;
+}
 
-  // Contact form opens WhatsApp with the inquiry details
-  const projectForm = document.getElementById("projectForm");
+function saveServices() {
+  try {
+    localStorage.setItem("azdar-services", JSON.stringify(services));
+    return true;
+  } catch (error) {
+    alert("Services could not be saved in this browser.");
+    return false;
+  }
+}
 
-  if (projectForm) {
-    projectForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+function renderServices() {
+  const grid = $("#servicesGrid");
+  grid.replaceChildren();
 
-      const name = document.getElementById("clientName").value.trim();
-      const email = document.getElementById("clientEmail").value.trim();
-      const service = document.getElementById("projectService").value;
-      const budget = document.getElementById("projectBudget").value;
-      const details = document.getElementById("projectDetails").value.trim();
+  services.forEach((service, index) => {
+    const card = document.createElement("article");
+    card.className = "service-card glass reveal visible";
 
-      if (!name || !service || !details) {
-        alert("Please fill in your name, service and project details.");
-        return;
+    const icon = document.createElement("div");
+    icon.className = "service-icon";
+    icon.textContent = ["⌘", "▣", "◎", "✧", "◈", "↗"][index % 6];
+
+    const title = document.createElement("h3");
+    title.textContent = service.title;
+
+    const description = document.createElement("p");
+    description.textContent = service.description;
+
+    const link = document.createElement("a");
+    link.className = "service-link";
+    link.href = "#contact";
+    link.textContent = "Discuss Project ↗";
+    link.dataset.service = service.title;
+
+    link.addEventListener("click", () => {
+      const select = $("#projectService");
+
+      let option = [...select.options].find(item =>
+        item.value === service.title ||
+        item.textContent.trim() === service.title
+      );
+
+      if (!option) {
+        option = new Option(service.title, service.title);
+        select.add(option);
       }
 
-      const message = [
-        "Assalam-o-Alaikum AzDar Web Studio!",
-        "",
-        "I want to discuss a project.",
-        "",
-        "Name: " + name,
-        "Email: " + (email || "Not provided"),
-        "Service: " + service,
-        "Budget: " + (budget || "Not specified"),
-        "",
-        "Project Details:",
-        details
-      ].join("\n");
-
-      const whatsappURL =
-        "https://wa.me/923002867506?text=" +
-        encodeURIComponent(message);
-
-      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      select.value = service.title;
     });
+
+    card.append(icon, title, description, link);
+    grid.appendChild(card);
+  });
+}
+
+function renderAdminServices() {
+  const list = $("#adminServiceList");
+  list.replaceChildren();
+
+  services.forEach((service, index) => {
+    const item = document.createElement("div");
+    item.className = "admin-service-item";
+
+    const info = document.createElement("div");
+    const title = document.createElement("strong");
+    title.textContent = service.title;
+
+    const description = document.createElement("p");
+    description.textContent = service.description;
+
+    info.append(title, description);
+
+    const actions = document.createElement("div");
+    actions.className = "admin-service-actions";
+
+    const edit = document.createElement("button");
+    edit.type = "button";
+    edit.textContent = "Edit";
+
+    edit.addEventListener("click", () => {
+      if (!adminUnlocked) return;
+
+      $("#editIndex").value = String(index);
+      $("#serviceName").value = service.title;
+      $("#serviceDescription").value = service.description;
+      $("#serviceName").focus();
+    });
+
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.textContent = "Delete";
+
+    remove.addEventListener("click", () => {
+      if (!adminUnlocked) return;
+
+      if (confirm("Delete this service?")) {
+        services.splice(index, 1);
+        saveServices();
+        renderServices();
+        renderAdminServices();
+        clearServiceForm();
+      }
+    });
+
+    actions.append(edit, remove);
+    item.append(info, actions);
+    list.append(item);
+  });
+}
+
+function clearServiceForm() {
+  $("#editIndex").value = "-1";
+  $("#serviceName").value = "";
+  $("#serviceDescription").value = "";
+}
+
+$("#cancelEdit").addEventListener("click", clearServiceForm);
+
+$("#serviceForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!adminUnlocked) return;
+
+  const title = $("#serviceName").value.trim();
+  const description = $("#serviceDescription").value.trim();
+  const editIndex = Number($("#editIndex").value);
+
+  if (!title || !description) return;
+
+  if (editIndex >= 0 && editIndex < services.length) {
+    services[editIndex] = { title, description };
+  } else {
+    services.push({ title, description });
   }
+
+  if (saveServices()) {
+    renderServices();
+    renderAdminServices();
+    clearServiceForm();
+  }
+});
+
+$("#adminLogout").addEventListener("click", () => {
+  adminUnlocked = false;
+  adminEditor.hidden = true;
+  adminLogin.hidden = false;
+  clearServiceForm();
+});
+
+/* Initial service rendering */
+renderServices();
 </script>
 
 </body>
