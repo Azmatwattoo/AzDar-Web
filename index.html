@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AzDar Web Studio | Your Vision, Our Code</title>
+<meta name="description" content="Professional websites, Shopify store design and custom digital solutions by AzDar Web Studio.">
+<style>
+:root {
+  --bg: #07111f;
+  --panel: #101d30;
+  --cyan: #00e5ff;
+  --purple: #a855f7;
+  --white: #f5f8ff;
+  --muted: #aab8cc;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(7,17,31,.96);
+  border-bottom: 1px solid #203149;
+  padding: 16px 6%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cyan);
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+nav a:hover { color: var(--cyan); }
+.hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 75px 7%;
+  background:
+    radial-gradient(circle at 80% 20%, #572c873d, transparent 35%),
+    radial-gradient(circle at 15% 70%, #00e5ff17, transparent 35%);
+}
+.hero-content { max-width: 850px; }
+.tag {
+  display: inline-block;
+  color: var(--cyan);
+  border: 1px solid #00e5ff66;
+  border-radius: 30px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.gradient {
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+p { color: var(--muted); margin-bottom: 18px; }
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  border: 1px solid var(--cyan);
+  transition: .2s;
+}
+.btn-primary {
+  color: #06111e;
+  background: var(--cyan);
+}
+.btn:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="#home">AzDar Web Studio</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">Creative Digital Solutions</span>
+    <h1>Build Your Business <span class="gradient">Online</span></h1>
+    <p>
+      We create professional, modern and mobile-friendly websites
+      designed to help your business build a strong online presence.
+    </p>
+    <p><strong>AzDar Web Studio — Your Vision, Our Code.</strong></p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#contact">Get Started</a>
+      <a class="btn" href="#services">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>Our <span class="gradient">Services</span></h2>
+    <p>Digital solutions tailored to your business needs.</p>
+  </div>
+
+  <div class="grid">
+    <article class="service">
+      <div class="symbol">🌐</div>
+      <h3>Business Websites</h3>
+      <p>Professional websites to showcase your business, services and brand.</p>
+    </article>
+
+    <article class="service">
+      <div class="symbol">🛍️</div>
+      <h3>Shopify Store Design</h3>
+      <p>Modern Shopify store layouts designed for a better shopping experience.</p>
+    </article>
+
+    <article class="service">
+      <div class="symbol">💻</div>
+      <h3>Custom Websites</h3>
+      <p>Custom website designs built around your requirements and ideas.</p>
+    </article>
+
+    <article class="service">
+      <div class="symbol">📱</div>
+      <h3>Mobile-Friendly Design</h3>
+      <p>Responsive layouts for phones, tablets and desktop computers.</p>
+    </article>
+
+    <article class="service">
+      <div class="symbol">🚀</div>
+      <h3>Landing Pages</h3>
+      <p>Focused pages for promoting products, services and campaigns.</p>
+    </article>
+
+    <article class="service">
+      <div class="symbol">🛠️</div>
+      <h3>Website Updates</h3>
+      <p>Improve your existing website's content, layout and appearance.</p>
+    </article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2>About <span class="gradient">Us</span></h2>
+  </div>
+
+  <div class="about-box">
+    <h3>Welcome to AzDar Web Studio</h3>
+    <p>
+      Our goal is to help businesses and individuals establish a
+      professional online presence through modern website design.
+    </p>
+    <p>
+      We focus on clean layouts, responsive design and solutions
+      shaped around each client's needs.
+    </p>
+    <strong>Created by Azmat Ali</strong>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Let's Build Something <span class="gradient">Great</span></h2>
+    <p>Tell us about your project and contact us to get started.</p>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-box">
+      <h3>Contact Details</h3>
+      <p>Get in touch with AzDar Web Studio.</p>
+
+      <a class="contact-link"
+         href="https://wa.me/923002867506"
+         target="_blank" rel="noopener">
+        WhatsApp: 0300 2867506
+      </a>
+
+      <a class="contact-link" href="mailto:azdarwattoo@gmail.com">
+        Email: azdarwattoo@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-box">
+      <h3>Project Inquiry</h3>
+
+      <form id="inquiryForm">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" required
+               placeholder="Enter your name">
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          <option>Business Website</option>
+          <option>Shopify Store Design</option>
+          <option>Custom Website</option>
+          <option>Landing Page</option>
+          <option>Mobile-Friendly Design</option>
+          <option>Website Updates</option>
+          <option>Other Digital Service</option>
+        </select>
+
+        <label for="details">Project Details</label>
+        <textarea id="details" name="details"
+          placeholder="Tell us what you need"></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Send Inquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong class="gradient">AzDar Web Studio</strong></p>
+  <p>Your Vision, Our Code.</p>
+  <p>Created by Azmat Ali</p>
+  <p>© <span id="year"></span> AzDar Web Studio. All rights reserved.</p>
+</footer>
+  
+<style>
+section { padding: 75px 7%; }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-title h2 {
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service, .about-box, .contact-box {
+  background: var(--panel);
+  padding: 25px;
+  border: 1px solid #25364e;
+  border-radius: 16px;
+}
+
+.service { transition: .2s; }
+
+.service:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+}
+
+.service .symbol {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+h3 { margin-bottom: 10px; }
+
+#about { background: #0a1627; }
+
+.about-box {
+  max-width: 850px;
+  margin: auto;
+  border-color: #673ab755;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.contact-link {
+  display: block;
+  margin: 14px 0;
+  overflow-wrap: anywhere;
+  color: var(--cyan);
+}
+
+label {
+  display: block;
+  margin: 12px 0 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #07111f;
+  border: 1px solid #34445b;
+  color: white;
+  font: inherit;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  border-top: 1px solid #25364e;
+}
+
+footer p { margin: 5px 0; }
+
+@media (max-width: 600px) {
+  header { padding: 14px 5%; }
+
+  nav { align-items: flex-start; }
+
+  nav ul {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 60px 6%;
+  }
+
+  section { padding: 55px 6%; }
+}
+</style>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+document.getElementById("inquiryForm").addEventListener(
+  "submit",
+  function(event) {
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+    const details =
+      document.getElementById("details").value.trim();
+
+    const message =
+      "Assalam-o-Alaikum AzDar Web Studio!\n" +
+      "My Name: " + name + "\n" +
+      "Required Service: " + service + "\n" +
+      "Project Details: " + details;
+
+    const whatsappURL =
+      "https://wa.me/923002867506?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  }
+);
+</script>
+
+</body>
+</html>
+  
